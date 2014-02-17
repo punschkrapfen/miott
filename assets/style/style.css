@@ -6,24 +6,30 @@
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 60px 0 0 0;
+  color: #515151;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
 }
 
-@media (min-width: 854px) {
-  body {
-    margin: 0 0 0 250px;
-  }
-}
-
-h1,
-h2 {
+h1, h2, h3 {
   padding: 10px;
   font-weight: 300;
   margin: 0;
@@ -31,112 +37,188 @@ h2 {
 
 /*-----  End of Scaffolding  ------*/
 
-/*===================================
-=         Header & Footer          =
-===================================*/
+/*===============================
+=            Sidebar            =
+===============================*/
 
-header,
-footer,
-nav ul {
-  left: 0;
-  right: 0;
-  background-color: rgba(250, 250, 250, .95);
+/* Style and "hide" the sidebar */
+.sidebar {
   position: fixed;
-}
-
-header {
   top: 0;
-  color: #444;
-}
-
-footer {
   bottom: 0;
-  color: #39f;
+  left: -16rem;
+  width: 16rem;
+  visibility: hidden;
+  overflow-y: auto;
+  background-color: rgba(250, 250, 250, .95);
+  -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
 }
 
-footer p {
-  margin: 10px 20px;
-}
-
-@media (min-width: 854px) {
-  header {
-    position: fixed;
-    width: 250px;
-    bottom: 0;
-  }
-
-  footer {
-    width: 250px;
+@media (min-width: 54rem) {
+  .sidebar {
+    left: 0;
+    z-index: 1000;
+    visibility: visible;
   }
 }
 
-#About {
-  float: right;
+/* Sidebar content */
+.sidebar a {
+  color: #444;
+  text-decoration: none;
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.sidebar-item {
+  padding: 1rem;
 }
 
-.nav:after {
-  content: "";
-  display: table;
-  clear: both;
+.sidebar-item p:last-child {
+  margin-bottom: 0;
 }
 
-.nav img {
-  height: 15px;
-}
-
-.nav > li {
-  float: left;
-}
-
-.nav li,
-.nav h1 {
-  font-size: 17px;
-  transition-duration: .25s;
-}
-
-.nav li a {
+/* Sidebar nav */
+.sidebar-nav-item {
   display: block;
-  padding: 10px 20px;
+  padding: .5rem 1rem;
 }
 
-#sub {
-  width: 250px;
-}
-
-#sub li:hover,
-.current {
-  background-color: #39f;
-  color: #fff;
-}
-
-#subAdd {
+.sidebar-nav-item.add {
   text-align: center;
   color: #999;
 }
-#subAdd:hover {
-  color: #39f;
-  background-color: #F0F0F0;
+
+.sidebar-nav-item.active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  color: #fff;
+  background-color: #39f;
 }
 
-@media (min-width: 854px) {
-  .nav > li > a,
-  .nav h1 {
+/* Sidebar footer */
+.sidebar-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: .625rem 1.25rem;
+}
+
+.sidebar-footer .left { float: left; }
+.sidebar-footer .right { float: right; }
+
+/* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
+.sidebar-checkbox {
+  display: none;
+}
+
+/* Style the `label` that we use to target the `.sidebar-checkbox` */
+.sidebar-toggle {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.2rem;
+  padding: .5rem .65rem;
+  margin-right: .5rem;
+  color: #39f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar-toggle:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-bottom: .125rem;
+  border-top: .375rem double;
+  border-bottom: .125rem solid;
+}
+
+.sidebar-toggle:active,
+#sidebar-checkbox:checked ~ .masthead .sidebar-toggle,
+#sidebar:target + .masthead .sidebar-toggle {
+  color: #fff;
+  background-color: #39f;
+}
+
+.wrap,
+.sidebar,
+.masthead {
+  -webkit-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.wrap,
+.masthead {
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+          transition: transform .3s ease-in-out;
+}
+
+#sidebar-checkbox:checked ~ .sidebar,
+#sidebar:target {
+  visibility: visible;
+}
+
+#sidebar-checkbox:checked ~ .sidebar,
+#sidebar-checkbox:checked ~ .wrap,
+#sidebar-checkbox:checked ~ .masthead,
+#sidebar:target,
+#sidebar:target ~ .wrap,
+#sidebar:target + .masthead {
+  -webkit-transform: translateX(16rem);
+      -ms-transform: translateX(16rem);
+          transform: translateX(16rem);
+}
+
+/*-----  End of Sidebar  ------*/
+
+/*================================
+=            Masthead            =
+================================*/
+
+.masthead {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding: .5rem 1rem;
+  background: rgba(250, 250, 250, 0.95);
+}
+
+@media (min-width: 54rem) {
+  .masthead {
     display: none;
   }
+}
 
-  #sub {
-    display: block !important;
-    top: 0;
+.masthead-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  color: #444;
+}
+
+/*-----  End of Masthead  ------*/
+
+/*===============================
+=            Content            =
+===============================*/
+
+.content {
+  padding-top: 4.625rem;
+}
+
+@media (min-width: 54rem) {
+  .content {
+    padding-top: 0;
+    padding-left: 18rem;
   }
 }
 
-/*-----  End of Header & Footer  ------*/
+/*-----  End of Content  ------*/
 
 /*===================================
 =              Item                 =
