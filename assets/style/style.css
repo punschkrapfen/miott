@@ -1,0 +1,169 @@
+/*===================================
+=            Scaffolding            =
+===================================*/
+body{
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	margin: 60px 0 0 0;
+}
+@media(min-width:854px)
+{
+	body{
+		margin: 0 0 0 250px;
+	}
+}
+h1, h2{
+	padding: 10px;
+	font-weight: 300;
+	margin: 0;
+}
+
+/*-----  End of Scaffolding  ------*/
+/*===================================
+=         Header & Footer          =
+===================================*/
+header,footer, nav ul{
+	left: 0;
+	right: 0;
+	background-color: rgba(250,250,250,0.95);
+	position: fixed;
+}
+header{
+	top: 0;
+	color: #444;
+}
+footer
+{
+	color: #39f;
+	bottom: 0;
+}
+footer p{
+	margin: 10px 20px;
+}
+@media(min-width:854px){
+	header{
+		position: fixed;
+		width: 250px;
+		bottom: 0;
+	}
+	footer{
+		width: 250px;
+	}
+}
+	#About{
+	float: right;
+}
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav:after {
+content: "";
+display: table;
+clear: both;
+}
+.nav img{
+	height: 15px;
+}
+.nav > li{
+	float: left;
+}
+.nav li, .nav h1{
+	font-size: 17px;
+	transition-duration: .25s;
+}
+.nav li a
+{
+	display: block;
+	padding: 10px 20px;
+}
+#sub{
+	width: 250px;
+}
+#sub li:hover, .current{
+	background-color: #39f;
+	color: #fff;
+}
+#subAdd{
+	text-align: center;
+	color: #999;
+}
+#subAdd:hover{
+	color: #39f;
+	background-color: #F0F0F0;
+}
+@media(min-width:854px){
+	.nav > li > a, .nav h1{
+		display: none;
+	}
+	#sub{
+		display: block !important;
+		top: 0;
+	}
+}
+/*===================================
+=            Item                 =
+===================================*/
+.item{
+	border: 1px solid #39f;
+	border-radius: 11px;
+	width: 250px;
+	margin: 20px auto;
+	text-align: center;
+}
+@media(min-width: 556px){
+	.item{
+		float: left;
+		margin: 13px;
+	}
+}
+@media(min-width: 556px){
+	.items{
+		width: 556px;
+		margin: auto;
+	}
+}
+@media(min-width: 1084px){
+	.items{
+		width: auto;
+	}
+}
+.item h2{
+	background-color: #39f;
+	color: #fff;
+	border-radius: 9px 9px 0 0;
+}
+.item p{
+	font-size: 12px;
+	color: #666;
+}
+.on, .off{
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	border: solid 1px #000;
+	background-color: inherit;
+	cursor: pointer;
+	transition-duration: .25s;
+	padding: 10px;
+	width: 50px;
+	box-sizing: content-box;
+
+}
+.on:hover, .off:hover{
+	color: #fff;
+}
+.on{
+	border-radius: 20px 0 0 20px;
+}
+.on:hover{
+	background-color: #3BAB55;
+}
+.off{
+	border-left: none;
+	border-radius: 0 20px 20px 0;
+}
+.off:hover{
+	background-color: #A90011;
+}
+/*-----  End of Item  ------*/
