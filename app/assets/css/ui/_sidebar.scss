@@ -1,0 +1,108 @@
+/*===============================
+=            Sidebar            =
+===============================*/
+
+/* Style and "hide" the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -16rem;
+  width: 16rem;
+  visibility: hidden;
+  overflow-y: auto;
+  background-color: rgba(#fafafa, .95);
+  transition: all .3s ease-in-out;
+}
+
+@media (min-width: 54rem) {
+  .sidebar {
+    left: 0;
+    z-index: 1000;
+    visibility: visible;
+  }
+}
+
+/* Sidebar content */
+.sidebar a {
+  color: #444;
+  text-decoration: none;
+}
+
+/* Sidebar nav */
+.sidebar-nav-item {
+  display: block;
+  padding: .625rem 1rem;
+}
+
+.sidebar-nav-item.add {
+  text-align: center;
+  color: #999;
+}
+
+.sidebar-nav-item.active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  color: #fff;
+  background-color: #39f;
+}
+
+/* Sidebar footer */
+.sidebar-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: .625rem 1.25rem;
+}
+
+.sidebar-footer .left { float: left; }
+.sidebar-footer .right { float: right; }
+
+/* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
+.sidebar-checkbox { display: none; }
+
+/* Style the `label` that we use to target the `.sidebar-checkbox` */
+.sidebar-toggle {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2rem;
+  margin: 0 .5rem;
+  padding: .5rem;
+  color: #39f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar-toggle:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-bottom: .125rem;
+  border-top: .375rem double;
+  border-bottom: .125rem solid;
+}
+
+.sidebar-toggle:active,
+#sidebar-checkbox:checked ~ .masthead .sidebar-toggle,
+#sidebar:target + .masthead .sidebar-toggle {
+  color: #fff;
+  background-color: #39f;
+}
+
+.wrap,
+.sidebar,
+.masthead { backface-visibility: hidden; }
+
+.wrap,
+.masthead { transition: transform .3s ease-in-out; }
+
+#sidebar-checkbox:checked ~ .sidebar,
+#sidebar:target { visibility: visible; }
+
+#sidebar-checkbox:checked ~ .sidebar,
+#sidebar-checkbox:checked ~ .wrap,
+#sidebar-checkbox:checked ~ .masthead,
+#sidebar:target,
+#sidebar:target ~ .wrap,
+#sidebar:target + .masthead { transform: translateX(16rem); }

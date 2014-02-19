@@ -1,0 +1,33 @@
+/*===================================
+=            Scaffolding            =
+===================================*/
+
+* { box-sizing: border-box; }
+
+*:before,
+*:after { box-sizing: border-box; }
+
+html,
+body { overflow-x: hidden; }
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+body {
+  color: #515151;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3 {
+  padding: .625rem;
+  font-weight: 300;
+  margin: 0;
+}

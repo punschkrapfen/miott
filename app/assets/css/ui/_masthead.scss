@@ -1,0 +1,26 @@
+/*================================
+=            Masthead            =
+================================*/
+
+.masthead {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding: .5rem 0;
+  background: rgba(250, 250, 250, 0.95);
+}
+
+@media (min-width: 54rem) {
+  .masthead { display: none; }
+}
+
+.masthead-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  color: #444;
+}

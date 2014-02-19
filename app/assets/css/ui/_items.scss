@@ -1,0 +1,77 @@
+/*=============================
+=            Items            =
+=============================*/
+
+.item {
+  width: 100%;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+@media (min-width: 54rem) {
+  .item {
+    width: 15rem;
+    margin: 1rem .5rem;
+    float: left;
+    @include clearfix;
+  }
+}
+
+.item-header {
+  border-radius: 10px 10px 0 0;
+  background-color: #39f;
+  color: #fff;
+}
+
+.item-body {
+  padding: 1rem;
+  border-radius: 0 0 10px 10px;
+  border: solid #39f;
+  border-width: 0 1px 1px;
+}
+
+.item-command {
+  display: block;
+  margin-bottom: .625rem;
+  font-size: .75rem;
+  color: #666;
+}
+
+.item-buttons {
+  display: inline-block;
+  @include clearfix;
+}
+
+.item-button {
+  float: left;
+  width: 4rem;
+  padding: .5rem;
+  border: 1px solid #ccc;
+  border-right-width: 0;
+  background: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all .25s ease;
+}
+
+.item-button:hover { color: #fff; }
+
+.item-button:first-child { border-radius: 20px 0 0 20px; }
+.item-button:last-child { border-radius: 0 20px 20px 0; }
+
+.item-button.on:hover {
+  background-color: #3BAB55;
+  border-color: #3BAB55;
+}
+
+.item-button.on:hover + .item-button.off { border-left-color: #3BAB55; }
+
+.item-button.off {
+  border-right-width: 1px;
+  border-radius: 0 20px 20px 0;
+}
+
+.item-button.off:hover {
+  background-color: #A90011;
+  border-color: #A90011;
+}
