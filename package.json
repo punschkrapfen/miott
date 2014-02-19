@@ -1,0 +1,38 @@
+{
+  "name": "miott",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Juri Schreib <juri@schreib.at>",
+  "contributors": [
+    {
+      "name": "Heinrich Fenkart",
+      "email": "hnrch02@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/punschkrapfen/miott",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punschkrapfen/miott.git"
+  },
+  "bugs": {
+    "url": "https://github.com/punschkrapfen/miott/issues"
+  },
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-sass": "~0.10.0",
+    "grunt-usemin": "~2.0.2",
+    "grunt-autoprefixer": "~0.6.5",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.8.0",
+    "grunt-rev": "~0.1.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.8.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "miott",
+  "version": "0.0.1",
+  "homepage": "https://github.com/punschkrapfen/miott",
+  "authors": [
+    "Juri Schreib <juri@schreib.at>",
+    "Heinrich Fenkart <hnrch02@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "~3.0.0",
+    "jquery": "~2.1.0",
+    "lodash": "~2.4.1"
+  }
+}

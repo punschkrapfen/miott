@@ -1,0 +1,24 @@
+{
+  "boss": true,
+  "browser": true,
+  "camelcase": true,
+  "expr": true,
+  "forin": true,
+  "freeze": true,
+  "latedef": true,
+  "laxbreak": true,
+  "laxcomma": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "quotmark": "single",
+  "strict": true,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+  "jquery": true,
+  "globals": {
+    "_": true
+  }
+}
