@@ -2,18 +2,13 @@
 =            Scaffolding            =
 ===================================*/
 
-*,
+* { box-sizing: border-box; }
+
 *:before,
-*:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
+*:after { box-sizing: border-box; }
 
 html,
-body {
-  overflow-x: hidden;
-}
+body { overflow-x: hidden; }
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -32,7 +27,7 @@ body {
 h1,
 h2,
 h3 {
-  padding: 10px;
+  padding: .625rem;
   font-weight: 300;
   margin: 0;
 }
@@ -52,9 +47,8 @@ h3 {
   width: 16rem;
   visibility: hidden;
   overflow-y: auto;
-  background-color: rgba(250, 250, 250, .95);
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+  background-color: rgba(#fafafa, .95);
+  transition: all .3s ease-in-out;
 }
 
 @media (min-width: 54rem) {
@@ -102,9 +96,7 @@ a.sidebar-nav-item:focus {
 .sidebar-footer .right { float: right; }
 
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
-.sidebar-checkbox {
-  display: none;
-}
+.sidebar-checkbox { display: none; }
 
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
@@ -136,33 +128,20 @@ a.sidebar-nav-item:focus {
 
 .wrap,
 .sidebar,
-.masthead {
-  -webkit-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
+.masthead { backface-visibility: hidden; }
 
 .wrap,
-.masthead {
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-          transition: transform .3s ease-in-out;
-}
+.masthead { transition: transform .3s ease-in-out; }
 
 #sidebar-checkbox:checked ~ .sidebar,
-#sidebar:target {
-  visibility: visible;
-}
+#sidebar:target { visibility: visible; }
 
 #sidebar-checkbox:checked ~ .sidebar,
 #sidebar-checkbox:checked ~ .wrap,
 #sidebar-checkbox:checked ~ .masthead,
 #sidebar:target,
 #sidebar:target ~ .wrap,
-#sidebar:target + .masthead {
-  -webkit-transform: translateX(16rem);
-      -ms-transform: translateX(16rem);
-          transform: translateX(16rem);
-}
+#sidebar:target + .masthead { transform: translateX(16rem); }
 
 /*-----  End of Sidebar  ------*/
 
@@ -181,9 +160,7 @@ a.sidebar-nav-item:focus {
 }
 
 @media (min-width: 54rem) {
-  .masthead {
-    display: none;
-  }
+  .masthead { display: none; }
 }
 
 .masthead-title {
@@ -291,13 +268,11 @@ a.sidebar-nav-item:focus {
 .item-command {
   display: block;
   margin-bottom: .625rem;
-  font-size: 12px;
+  font-size: .75rem;
   color: #666;
 }
 
-.item-buttons {
-  display: inline-block;
-}
+.item-buttons { display: inline-block; }
 
 .item-buttons:after {
   content: "";
@@ -314,13 +289,10 @@ a.sidebar-nav-item:focus {
   background: none;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-transition: all .25s ease;
-          transition: all .25s ease;
+  transition: all .25s ease;
 }
 
-.item-button:hover {
-  color: #fff;
-}
+.item-button:hover { color: #fff; }
 
 .item-button:first-child { border-radius: 20px 0 0 20px; }
 .item-button:last-child { border-radius: 0 20px 20px 0; }
